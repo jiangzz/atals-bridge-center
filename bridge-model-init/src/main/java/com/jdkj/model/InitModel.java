@@ -6,7 +6,6 @@ import org.apache.atlas.model.typedef.AtlasEntityDef;
 import org.apache.atlas.model.typedef.AtlasRelationshipDef;
 import org.apache.atlas.model.typedef.AtlasTypesDef;
 import org.apache.atlas.utils.AtlasJson;
-import org.apache.commons.configuration.Configuration;
 
 import javax.ws.rs.HttpMethod;
 import javax.ws.rs.core.Response;
@@ -49,7 +48,7 @@ public class InitModel {
         }
     }
     public static String initEntityModel() throws IOException {
-        InputStream resourceAsStream = InitModel.class.getClassLoader().getResourceAsStream("typedefs.json");
+        InputStream resourceAsStream = InitModel.class.getClassLoader().getResourceAsStream("typedefs_v1.json");
         InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         StringBuilder sb=new StringBuilder();
@@ -61,7 +60,7 @@ public class InitModel {
         return sb.toString();
     }
     public static String initRelationshipModel() throws IOException {
-        InputStream resourceAsStream = InitModel.class.getClassLoader().getResourceAsStream("relationship.json");
+        InputStream resourceAsStream = InitModel.class.getClassLoader().getResourceAsStream("relationship_v1.json");
         InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         StringBuilder sb=new StringBuilder();
@@ -73,7 +72,7 @@ public class InitModel {
         return sb.toString();
     }
     public static String initAllEntityModel() throws IOException {
-        InputStream resourceAsStream = InitModel.class.getClassLoader().getResourceAsStream("allinone.json");
+        InputStream resourceAsStream = InitModel.class.getClassLoader().getResourceAsStream("allinone_v1.json");
         InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         StringBuilder sb=new StringBuilder();
