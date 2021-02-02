@@ -17,6 +17,7 @@
         <module>bridge-common</module>
         <module>bridge-streaming</module>
         <module>bridge-model-init</module>
+        <module>bridge-repository</module>
     </modules>
 
     <properties>

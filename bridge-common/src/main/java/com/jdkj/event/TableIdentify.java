@@ -4,20 +4,16 @@ public class TableIdentify {
     private String cluster;
     private String database;
     private String table;
-
     public TableIdentify(String cluster, String database, String table) {
         this.cluster = cluster;
         this.database = database;
         this.table = table;
     }
-
     public TableIdentify() {
     }
-
     public String getCluster() {
         return cluster;
     }
-
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }

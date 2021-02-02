@@ -1,0 +1,334 @@
+{
+  "enumDefs": [],
+  "structDefs": [],
+  "classificationDefs": [],
+  "entityDefs": [],
+  "relationshipDefs": [
+    {
+      "name": "BusinessDirectory_BusinessDirectory",
+      "description": "描述业务目录之间的层级关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "BusinessDirectory",
+        "name": "parent",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "父节点信息"
+      },
+      "endDef2": {
+        "type": "BusinessDirectory",
+        "name": "children",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "所有子节点信息"
+      }
+    },
+    {
+      "name": "SubjectDomain_SubjectDomain",
+      "description": "描述主题域之间的层级关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "SubjectDomain",
+        "name": "parent",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "父节点信息"
+      },
+      "endDef2": {
+        "type": "SubjectDomain",
+        "name": "children",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "所有子节点信息"
+      }
+    },
+    {
+      "name": "Tag_Tag",
+      "description": "描述标签之间的层级关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "Tag",
+        "name": "parent",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "父节点信息"
+      },
+      "endDef2": {
+        "type": "Tag",
+        "name": "children",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "所有子节点信息"
+      }
+    },
+    {
+      "name": "BusinessSystem_BusinessSector",
+      "description": "业务体系和业务板块的关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "BusinessSector",
+        "name": "businessSystem",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "存储业务体系信息"
+      },
+      "endDef2": {
+        "type": "BusinessSystem",
+        "name": "businessSectors",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "存储业务板块信息"
+      }
+    },
+    {
+      "name": "Market_TaskSpace",
+      "serviceType": "user_define",
+      "typeVersion": "1.0",
+      "description": "集市和作业空间的关系",
+      "relationshipCategory": "AGGREGATION",
+      "endDef1": {
+        "type": "TaskSpace",
+        "name": "market",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": true
+      },
+      "endDef2": {
+        "type": "Market",
+        "name": "taskSpaces",
+        "isContainer": true,
+        "cardinality": "SET"
+      },
+      "propagateTags": "NONE"
+    },
+    {
+      "name": "TaskSpace_Task",
+      "serviceType": "user_define",
+      "typeVersion": "1.0",
+      "description": "作业空间和任务关系",
+      "relationshipCategory": "AGGREGATION",
+      "endDef1": {
+        "type": "Task",
+        "name": "taskSpace",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": true
+      },
+      "endDef2": {
+        "type": "TaskSpace",
+        "name": "tasks",
+        "isContainer": true,
+        "cardinality": "SET"
+      },
+      "propagateTags": "NONE"
+    },
+    {
+      "name": "Task_BusinessTable",
+      "serviceType": "user_define",
+      "typeVersion": "1.0",
+      "description": "作业空间和业务表关系",
+      "relationshipCategory": "AGGREGATION",
+      "endDef1": {
+        "type": "Task",
+        "name": "businessTables",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false
+      },
+      "endDef2": {
+        "type": "BusinessTable",
+        "name": "tasks",
+        "isContainer": false,
+        "cardinality": "SET"
+      },
+      "propagateTags": "NONE"
+    },
+    {
+      "name": "BusinessTable_BusinessTable_Column",
+      "serviceType": "user_define",
+      "typeVersion": "1.0",
+      "relationshipCategory": "COMPOSITION",
+      "endDef1": {
+        "type": "BusinessTable",
+        "name": "columns",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": true
+      },
+      "endDef2": {
+        "type": "BusinessTable_Column",
+        "name": "table",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": true
+      },
+      "propagateTags": "NONE"
+    },
+    {
+      "name": "Task_Tag",
+      "serviceType": "user_define",
+      "description": "任务和标签",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "Task",
+        "name": "tags",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "关联标签信息"
+      },
+      "endDef2": {
+        "type": "Tag",
+        "name": "tasks",
+        "isContainer": false,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "关联作业信息"
+      }
+    },
+    {
+      "name": "BusinessSector_hive_table",
+      "description": "业务板块和hive表关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "BusinessSector",
+        "name": "tables",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "存储业务表信息"
+      },
+      "endDef2": {
+        "type": "hive_table",
+        "name": "businessSector",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "关联业务板块"
+      }
+    },
+    {
+      "name": "BusinessDirectory_hive_table",
+      "description": "业务目录和hive表关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "BusinessDirectory",
+        "name": "tables",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "存储业务表信息"
+      },
+      "endDef2": {
+        "type": "hive_table",
+        "name": "businessDirectory",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "关联业务目录信息"
+      }
+    },
+    {
+      "name": "SubjectDomain_hive_table",
+      "description": "业务目录和hive表关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "SubjectDomain",
+        "name": "tables",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "主题域保存表信息"
+      },
+      "endDef2": {
+        "type": "hive_table",
+        "name": "subjectDomain",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "关联业务目录信息"
+      }
+    },
+    {
+      "name": "Market_hive_table",
+      "description": "集市和hive表关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "Market",
+        "name": "tables",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "集市域保存表信息"
+      },
+      "endDef2": {
+        "type": "hive_table",
+        "name": "market",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": false,
+        "description": "关联集市信息"
+      }
+    },
+    {
+      "name": "Task_hive_table",
+      "description": "集市和hive表关系",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "relationshipCategory": "AGGREGATION",
+      "propagateTags": "ONE_TO_TWO",
+      "endDef1": {
+        "type": "Task",
+        "name": "tables",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "集市域保存表信息"
+      },
+      "endDef2": {
+        "type": "hive_table",
+        "name": "tasks",
+        "isContainer": false,
+        "cardinality": "SET",
+        "isLegacyAttribute": false,
+        "description": "关联作业信息"
+      }
+    }
+  ],
+  "businessMetadataDefs": []
+}

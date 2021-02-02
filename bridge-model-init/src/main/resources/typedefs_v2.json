@@ -1,0 +1,215 @@
+{
+  "enumDefs": [],
+  "structDefs": [],
+  "classificationDefs": [],
+  "entityDefs": [
+    {
+      "category": "ENTITY",
+      "name": "AbstractBaseEntity",
+      "description": "所有用户定义外围类型的基础类型",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "Infrastructure"
+      ],
+      "attributeDefs": [
+        {
+          "name": "updater",
+          "description": "模型的更新者",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": true,
+          "includeInNotification": false,
+          "searchWeight": 1,
+          "indexType": "STRING"
+        },
+        {
+          "name": "createTime",
+          "description": "模型的创建日期",
+          "typeName": "date",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "includeInNotification": false,
+          "searchWeight": 1
+        },
+        {
+          "name": "lastUpdate",
+          "description": "模型的更新日期",
+          "typeName": "date",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "includeInNotification": false,
+          "searchWeight": 1
+        }
+      ]
+    },
+    {
+      "category": "ENTITY",
+      "name": "BusinessSystem",
+      "description": "业务体系，是业务大类",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "BusinessSector",
+      "description": "业务板块，一个业务体系下的子模块",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "BusinessDirectory",
+      "description": "业务目录，本身存在着目录层级形式",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "SubjectDomain",
+      "description": "主题域，存在层级",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "Tag",
+      "description": "标签，存在层级",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "Market",
+      "description": "集市/工程",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "TaskSpace",
+      "description": "任务空间，包含作业关系和集市关系",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "BusinessTable",
+      "description": "业务表，仅仅在管道作业的时候才会设计",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity",
+        "DataSet"
+      ],
+      "attributeDefs": []
+    },
+    {
+      "category": "ENTITY",
+      "name": "BusinessTable_Column",
+      "description": "业务表字段信息",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "DataSet"
+      ],
+      "attributeDefs": [
+        {
+          "name": "type",
+          "typeName": "string",
+          "isOptional": false,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": true,
+          "includeInNotification": false,
+          "searchWeight": -1
+        },
+        {
+          "name": "comment",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "includeInNotification": false,
+          "searchWeight": 9
+        }
+      ]
+    },
+    {
+      "category": "ENTITY",
+      "name": "Task",
+      "description": "作业信息",
+      "typeVersion": "1.0",
+      "serviceType": "user_define",
+      "superTypes": [
+        "AbstractBaseEntity",
+        "DataSet"
+      ],
+      "attributeDefs": [
+        {
+          "name": "taskType",
+          "description": "作业类型",
+          "typeName": "string",
+          "isOptional": false,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": true,
+          "includeInNotification": false,
+          "searchWeight": 9,
+          "indexType": "STRING"
+        }
+      ]
+    }
+  ],
+  "relationshipDefs": [
+  ],
+  "businessMetadataDefs": []
+}
+

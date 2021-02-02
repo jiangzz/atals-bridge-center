@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="bridge-streaming" />
         <module name="bridge-model-init" />
+        <module name="bridge-repository" />
         <module name="bridge-common" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="atals-bridge-center" options="-parameters" />
       <module name="bridge-common" options="-parameters" />
       <module name="bridge-model-init" options="-parameters" />
+      <module name="bridge-repository" options="-parameters" />
       <module name="bridge-streaming" options="-parameters" />
     </option>
   </component>

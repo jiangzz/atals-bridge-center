@@ -1,0 +1,52 @@
+PUT /atlas
+{
+  "mappings": {
+    "_doc":{
+        "properties":{
+              "type":{"type":"keyword"},
+              "name":{"type":"keyword"},
+              "qualifiedName":{"type":"keyword"},
+              "displayName":{"type":"text","analyzer":"ik_max_word"},
+              "description":{"type":"text","analyzer":"ik_max_word"},
+              "owner":{"type":"text","analyzer":"ik_max_word"},
+              "updater":{"type":"text","analyzer":"ik_max_word"},
+              "taskType":{"type":"keyword"},
+              "project":{"type":"keyword"},
+              "createTime":{
+                  "type":"date",
+                   "format":"strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+              },
+              "lastUpdate":{
+                "type":"date",
+                 "format":"strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+              },
+              "extInfos":{
+                "type":"nested",
+                 "properties":{
+                    "key":{"type":"text"},
+                    "value":{"type":"text"}
+                 }
+              },
+              "taskLineages":{
+                "type":"nested",
+                 "properties":{
+                    "task":{"type":"keyword"},
+                    "direction":{"type":"keyword"},
+                    "description":{"type":"text","analyzer":"ik_max_word"}
+                 }
+               },
+              "parent":{"type":"text"},
+              "children":{"type":"text"},
+              "tableRefs":{"type":"text"},
+              "relationships":{"type":"text"},
+              "businessSystem":{"type":"keyword"},
+              "businessSectors":{"type":"keyword"},
+              "tasks":{"type":"keyword"},
+              "businessTable":{"type":"keyword"},
+              "businessTables":{"type":"keyword"},
+              "tags":{"type":"keyword"},
+              "taskspace":{"type":"keyword"}
+      }
+    }
+  }
+}
