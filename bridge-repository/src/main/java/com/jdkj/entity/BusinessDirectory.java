@@ -8,9 +8,10 @@ import java.util.Date;
 import java.util.List;
 
 @Document(indexName = "atlas",type ="_doc")
-public class BusinessDirectory extends ESHiveModel implements Serializable {
+public class BusinessDirectory extends ESBaseModel implements Serializable {
     private String parent;
     private List<String> children;
+    private List<String> tableRefs; 
 
     @PersistenceConstructor
     public BusinessDirectory( String name, String displayName, String description, String owner, String updater, Date createTime, Date lastUpdate) {

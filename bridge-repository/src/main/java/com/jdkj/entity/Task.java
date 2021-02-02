@@ -8,13 +8,13 @@ import java.util.Date;
 import java.util.List;
 
 @Document(indexName = "atlas",type ="_doc")
-public class Task extends ESHiveModel implements Serializable {
+public class Task extends ESBaseModel implements Serializable {
     private String taskType;
     private String taskspace;
     private List<TaskLineage> taskLineages;
     private List<String> businessTables;//关联业务表
     private List<String> tags;//关联标签
-
+    private List<String> tableRefs; //关联Hive表
     @PersistenceConstructor
     public Task(String name, String displayName, String description, String owner, String updater, Date createTime, Date lastUpdate) {
         super(Task.class.getSimpleName(), name, displayName, description, owner, updater, createTime, lastUpdate);

@@ -8,9 +8,10 @@ import java.util.Date;
 import java.util.List;
 
 @Document(indexName = "atlas",type ="_doc")
-public class SubjectDomain extends ESHiveModel implements  Serializable {
+public class SubjectDomain extends ESBaseModel implements  Serializable {
     private String parent;
     private List<String> children;
+    private List<String> tableRefs; //关联Hive表
 
     @PersistenceConstructor
     public SubjectDomain( String name, String displayName, String description, String owner, String updater, Date createTime, Date lastUpdate) {
